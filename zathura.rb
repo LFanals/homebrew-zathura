@@ -50,10 +50,10 @@ class Zathura < Formula
     inreplace "data/zathura.css_t" do |s|
       s.gsub! "\#@session@ .indexmode:selected {", "
         window {
-          border-radius: 10px;
+          border-radius: 0px;
         }
         \#@session@ .statusbar {
-          border-radius: 0px 0px 10px 10px; /* Rounding only the bottom corners to correlate with the window. */
+          border-radius: 0px 0px 0px 0px; /* Rounding only the bottom corners to correlate with the window. */
         }
         \#@session@ .indexmode:selected {"
     end
