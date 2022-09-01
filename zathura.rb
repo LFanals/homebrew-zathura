@@ -41,30 +41,30 @@ class Zathura < Formula
       s.gsub! "GdkWindow* window = gtk_widget_get_window(zathura->ui.session->gtk.view);", "
       GdkWindow* window = gtk_widget_get_window(zathura->ui.session->gtk.view);
       GtkWidget* topLevelWidget = gtk_widget_get_toplevel(zathura->ui.session->gtk.view); // TopLevel is (in zathura) always a GtkWindow, so we just check to see if it is NULL to prevent crashing.
+      gtk_window_set_titlebar(GTK_WINDOW(topLevelWidget), gtk_header_bar_new()); // Casting GtkWindow to the GtkWidget to fit the function and creating a new (empty) titlebar.
         "
     end
  
 
-      # gtk_window_set_titlebar(GTK_WINDOW(topLevelWidget), gtk_header_bar_new()); // Casting GtkWindow to the GtkWidget to fit the function and creating a new (empty) titlebar.
       # gtk_window_set_decorated(GTK_WINDOW(topLevelWidget), true);
 
 
-    inreplace "data/zathura.css_t" do |s|
-      s.gsub! "\#@session@ .indexmode:selected {", "
-        window {
-          border-radius: 0px;
-        }
-        \#@session@ .headerbar {
-          min-height: 50px;
-        }
-        headerbar {
-          min-height: 44px;
-        }
-        \#@session@ .statusbar {
-          border-radius: 0px 0px 0px 0px; /* Rounding only the bottom corners to correlate with the window. */
-        }
-        \#@session@ .indexmode:selected {"
-    end
+#     inreplace "data/zathura.css_t" do |s|
+#       s.gsub! "\#@session@ .indexmode:selected {", "
+#         window {
+#           border-radius: 0px;
+#         }
+#         \#@session@ .headerbar {
+#           min-height: 50px;
+#         }
+#         headerbar {
+#           min-height: 44px;
+#         }
+#         \#@session@ .statusbar {
+#           border-radius: 0px 0px 0px 0px; /* Rounding only the bottom corners to correlate with the window. */
+#         }
+#         \#@session@ .indexmode:selected {"
+#     end
 
 
 #     inreplace "data/zathura.css_t" do |s|
