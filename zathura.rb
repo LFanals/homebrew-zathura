@@ -49,10 +49,6 @@ class Zathura < Formula
       # gtk_window_set_decorated(GTK_WINDOW(topLevelWidget), true);
     #
 
-    inreplace "meson.build" do |s|
-      s.gsub! "subdir ('doc')", ""
-    end
-
 
     inreplace "data/zathura.css_t" do |s|
       s.gsub! "\#@session@ .indexmode:selected {", "
