@@ -37,17 +37,21 @@ class Zathura < Formula
     
     # Adding in the titlebar modifications
     
-#     inreplace "zathura/zathura.c" do |s|
-#       s.gsub! "GdkWindow* window = gtk_widget_get_window(zathura->ui.session->gtk.view);", "
-#   GdkWindow* window = gtk_widget_get_window(zathura->ui.session->gtk.view);
-#   GtkWidget* topLevelWidget = gtk_widget_get_toplevel(zathura->ui.session->gtk.view); // TopLevel is (in zathura) always a GtkWindow, so we just check to see if it is NULL to prevent crashing.
+    inreplace "zathura/zathura.c" do |s|
+      s.gsub! "GdkWindow* window = gtk_widget_get_window(zathura->ui.session->gtk.view);", "
+  GdkWindow* window = gtk_widget_get_window(zathura->ui.session->gtk.view);
+  GtkWidget* topLevelWidget = gtk_widget_get_toplevel(zathura->ui.session->gtk.view); // TopLevel is (in zathura) always a GtkWindow, so we just check to see if it is NULL to prevent crashing.
+  gtk_window_set_decorated(GTK_WINDOW(topLevelWidget), false);
+  "
+    end
+
 #   if (topLevelWidget == NULL) {
 #     return;
 #   }
 #   if (GTK_IS_WINDOW(topLevelWidget)) {
 #   	gtk_window_set_decorated(GTK_WINDOW(topLevelWidget), false);
-#   }"
-#     end
+#   }
+
 
 
     system 'mkdir build'
