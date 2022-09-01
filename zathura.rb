@@ -54,8 +54,11 @@ class Zathura < Formula
         window {
           border-radius: 0px;
         }
+        \#@session@ .headerbar {
+          max-height: 10px;
+        }
         headerbar {
-          min-height: 24px;
+          max-height: 24px;
         }
         \#@session@ .statusbar {
           border-radius: 0px 0px 0px 0px; /* Rounding only the bottom corners to correlate with the window. */
