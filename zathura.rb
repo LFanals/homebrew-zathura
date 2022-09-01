@@ -41,7 +41,7 @@ class Zathura < Formula
       s.gsub! "GdkWindow* window = gtk_widget_get_window(zathura->ui.session->gtk.view);", "
       GdkWindow* window = gtk_widget_get_window(zathura->ui.session->gtk.view);
       GtkWidget* topLevelWidget = gtk_widget_get_toplevel(zathura->ui.session->gtk.view); // TopLevel is (in zathura) always a GtkWindow, so we just check to see if it is NULL to prevent crashing.
-      gtk_window_set_decorated(GTK_WINDOW(topLevelWidget), false);"
+      gtk_window_set_decorated(GTK_WINDOW(topLevelWidget), true);"
     end
 
 
