@@ -46,6 +46,7 @@ class Zathura < Formula
   }
   gtk_window_set_decorated(GTK_WINDOW(topLevelWidget), false);
   // gtk_window_set_titlebar(GTK_WINDOW(topLevelWidget), gtk_header_bar_new()); // Casting GtkWindow to the GtkWidget to fit the function and creating a new (empty) titlebar.
+  gtk_widget_set_size_request(topLevelWidget, 0, 0);
   "
     end
 
