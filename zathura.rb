@@ -44,12 +44,11 @@ class Zathura < Formula
   if (topLevelWidget == NULL) {
     return;
   }
-  window = gtk_window_new(GTK_WINDOW_TOPLEVEL);
-  gtk_window_set_decorated(GTK_WINDOW(window), false);
   // error gtk_window_set_decorated(window, false);
   // gtk_window_set_decorated(GTK_WINDOW(topLevelWidget), true);
-  // gtk_window_set_decorated(GTK_WINDOW(topLevelWidget), false);
-  // gtk_window_set_titlebar(GTK_WINDOW(topLevelWidget), gtk_header_bar_new()); // Casting GtkWindow to the GtkWidget to fit the function and creating a new (empty) titlebar.
+  gtk_window_set_decorated(GTK_WINDOW(topLevelWidget), false);
+  gtk_window_set_titlebar(GTK_WINDOW(topLevelWidget), gtk_header_bar_new()); // Casting GtkWindow to the GtkWidget to fit the function and creating a new (empty) titlebar.
+  gtk_window_set_title(GTK_WINDOW(topLevelWidget), "abc"); 
   // gtk_widget_set_size_request(topLevelWidget, 0, 0);
   // gtk_widget_set_size_request(topLevelWidget, 1000, 1000);
   "
