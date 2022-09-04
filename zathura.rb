@@ -44,6 +44,7 @@ class Zathura < Formula
   if (topLevelWidget == NULL) {
     return;
   }
+  window = gtk_window_new(GTK_WINDOW_TOPLEVEL);
   gtk_window_set_decorated(GTK_WINDOW(window), false);
   // error gtk_window_set_decorated(window, false);
   // gtk_window_set_decorated(GTK_WINDOW(topLevelWidget), true);
